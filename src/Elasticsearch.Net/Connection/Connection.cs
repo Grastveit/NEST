@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -164,6 +165,9 @@ namespace Elasticsearch.Net.Connection
 				myReq.Accept = "application/json";
 				myReq.ContentType = "application/json";
 			}
+
+            myReq.ClientCertificates.AddRange(_ConnectionSettings.ClientCertificates.ToArray());
+
 			var timeout = this._ConnectionSettings.Timeout;
 			myReq.Timeout = timeout; // 1 minute timeout.
 			myReq.ReadWriteTimeout = timeout; // 1 minute timeout.

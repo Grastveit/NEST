@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Elasticsearch.Net
 {
@@ -9,7 +11,9 @@ namespace Elasticsearch.Net
 		int MaximumAsyncConnections { get; }
 		string Host { get; }
 		int Port { get; }
-		int Timeout { get; }
+        bool Ssl { get; }
+        IList<X509Certificate> ClientCertificates { get; }
+        int Timeout { get; }
 		string ProxyAddress { get; }
 		string ProxyUsername { get; }
 		string ProxyPassword { get; }
