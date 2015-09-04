@@ -14,7 +14,7 @@ namespace Nest.Tests.Unit.Search.Highlight
 				.Size(10)
 				.Highlight(h => h
 					.BoundaryCharacters(".,!? \t\n")
-					.BoundaryMaxSize(20)
+					.BoundaryMaxScan(20)
 					.Encoder("html")
 					.FragmentOffset(0)
 					.FragmentSize(3)

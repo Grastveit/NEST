@@ -28,8 +28,8 @@ namespace Nest
 		[JsonProperty("fragment_offset")]
 		int? FragmentOffset { get; set; }
 
-		[JsonProperty("boundary_max_size")]
-		int? BoundaryMaxSize { get; set; }
+		[JsonProperty("boundary_max_scan")]
+		int? BoundaryMaxScan { get; set; }
 
 		[JsonProperty("encoder")]
 		string Encoder { get; set; }
@@ -56,7 +56,7 @@ namespace Nest
 		public string TagsSchema { get; set; }
 		public int? NumberOfFragments { get; set; }
 		public int? FragmentOffset { get; set; }
-		public int? BoundaryMaxSize { get; set; }
+		public int? BoundaryMaxScan { get; set; }
 		public string Encoder { get; set; }
 		public string Order { get; set; }
 		public Dictionary<PropertyPathMarker, IHighlightField> Fields { get; set; }
@@ -81,7 +81,7 @@ namespace Nest
 
 		int? IHighlightRequest.FragmentOffset { get; set; }
 
-		int? IHighlightRequest.BoundaryMaxSize { get; set; }
+		int? IHighlightRequest.BoundaryMaxScan { get; set; }
 
 		string IHighlightRequest.Encoder { get; set; }
 
@@ -177,9 +177,9 @@ namespace Nest
 			Self.BoundaryChars = boundaryCharacters;
 			return this;
 		}
-		public HighlightDescriptor<T> BoundaryMaxSize(int boundaryMaxSize)
+		public HighlightDescriptor<T> BoundaryMaxScan(int boundaryMaxSize)
 		{
-			Self.BoundaryMaxSize = boundaryMaxSize;
+			Self.BoundaryMaxScan = boundaryMaxSize;
 			return this;
 		}
 	}
